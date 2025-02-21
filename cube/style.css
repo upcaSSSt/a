@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {text-decoration: none;}
+ul, ol, li {list-style: none;}
+img {vertical-align: top;}
+input:focus, select:focus, textarea:focus {outline: none;}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}
+input[type=number] {
+    appearance: textfield;
+}
+h1, h2, h3, h4, h5, h6, input, select, textarea, button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-align: inherit;
+}
+button {-webkit-tap-highlight-color: transparent;}
+html, body {
+    height: 100%;
+    line-height: 1;
+}
+
+body {
+  font-family: Arial;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  perspective: 1000px;
+}
+
+.box {
+  position: fixed;
+  top: calc(50% - 125px);
+  left: calc(50% - 125px);
+  height: 250px;
+  width: 250px;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotateX(360deg) rotateY(-360deg);
+  }
+  100% {
+    transform: rotateX(-360deg) rotateY(360deg);
+  }
+}
+
+.card {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  line-height: 250px;
+  border: 1px solid #f00;
+  background-color: #000;
+}
+
+.front {
+  transform: translateZ(125px); 
+}
+
+.back {
+  transform: translateZ(-125px);
+}
+
+.left {
+  right: 125px;
+  transform: rotateY(-90deg);
+}
+
+.right {
+  left: 125px;
+  transform: rotateY(90deg);
+}
+
+.top {
+  bottom: 125px;
+  transform: rotateX(90deg);
+}
+
+.bottom {
+  top: 125px;
+  transform: rotateX(-90deg);
+}
