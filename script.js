@@ -42,3 +42,9 @@ function replace(str) {
     return f * s;
 });
 }
+
+/*
+function parse(str) {
+  return Function(`'use strict'; return (${str})`)()
+}
+*/
